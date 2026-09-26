@@ -1,0 +1,6 @@
+{
+  "headers": [
+    { "source": "/sekai.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
+    { "source": "/logo/(.*)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] }
+  ]
+}

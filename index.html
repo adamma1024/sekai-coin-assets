@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEKAI Token</title>
+  <meta name="description" content="SEKAI is an independent community token on Solana with a fixed supply of 10,000,000,000 and a 1% transfer fee.">
+  <meta property="og:title" content="SEKAI Token">
+  <meta property="og:description" content="An independent community token on Solana. Fixed supply, minting permanently disabled, 1% transfer fee.">
+  <meta property="og:image" content="/logo/sekai-512.png">
+  <meta name="theme-color" content="#0d0b14">
+  <link rel="icon" type="image/png" href="/logo/sekai-64.png">
+  <style>
+    :root {
+      --bg: #0d0b14;
+      --surface: #16131f;
+      --border: #2a2638;
+      --text: #f2f0f7;
+      --muted: #a39db3;
+      --purple: #9945ff;
+      --green: #14f195;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f6fb;
+        --surface: #ffffff;
+        --border: #e3e0ec;
+        --text: #16131f;
+        --muted: #635c75;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 64px 16px 48px; }
+    .hero { text-align: center; }
+    .hero img { width: 144px; height: 144px; filter: drop-shadow(0 12px 32px rgba(153, 69, 255, .35)); }
+    h1 {
+      margin: 20px 0 4px;
+      font-size: clamp(40px, 9vw, 64px);
+      letter-spacing: .04em;
+      line-height: 1.1;
+      background: linear-gradient(90deg, var(--purple), var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tagline { margin: 0; color: var(--muted); font-size: 18px; }
+    section { margin-top: 48px; }
+    h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+    .address {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 14px 14px 14px 18px;
+    }
+    .address code {
+      flex: 1; min-width: 0; overflow-wrap: anywhere;
+      font: 15px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    button {
+      flex: none; cursor: pointer; border: 0; border-radius: 10px; padding: 10px 16px;
+      font: inherit; font-size: 14px; font-weight: 600; line-height: 1; color: #0d0b14;
+      background: linear-gradient(90deg, var(--purple), var(--green));
+    }
+    button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .fact { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+    .fact .label { color: var(--muted); font-size: 13px; }
+    .fact .value { font-size: 20px; font-weight: 650; margin-top: 2px; }
+    .fact .note { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .links a {
+      color: var(--text); text-decoration: none; border: 1px solid var(--border); background: var(--surface);
+      border-radius: 999px; padding: 9px 16px; font-size: 14px;
+    }
+    .links a:hover { border-color: var(--purple); }
+    footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+    footer p { margin: 0 0 8px; }
+    @media (max-width: 520px) {
+      main { padding-top: 40px; }
+      .facts { grid-template-columns: 1fr; }
+      .address { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <img src="/logo/sekai-512.webp" alt="SEKAI coin logo" width="144" height="144">
+      <h1>SEKAI</h1>
+      <p class="tagline">An independent community token on Solana.</p>
+    </header>
+
+    <section aria-labelledby="address-heading">
+      <h2 id="address-heading">Token address</h2>
+      <div class="address">
+        <code id="mint">ByNePJZDNwnrDFbQSB1QDEtG7SwUd83CpakdZ3MUN2Fw</code>
+        <button type="button" id="copy">Copy</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="facts-heading">
+      <h2 id="facts-heading">Token facts</h2>
+      <div class="facts">
+        <div class="fact">
+          <div class="label">Total supply</div>
+          <div class="value">10,000,000,000</div>
+          <div class="note">Fixed. Minting is permanently disabled.</div>
+        </div>
+        <div class="fact">
+          <div class="label">Transfer fee</div>
+          <div class="value">1%</div>
+          <div class="note">Withheld in SEKAI on every transfer.</div>
+        </div>
+        <div class="fact">
+          <div class="label">Standard</div>
+          <div class="value">Token-2022</div>
+          <div class="note">Solana token extensions program.</div>
+        </div>
+        <div class="fact">
+          <div class="label">Freeze authority</div>
+          <div class="value">None</div>
+          <div class="note">No account can be frozen.</div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="links-heading">
+      <h2 id="links-heading">Verify on chain</h2>
+      <nav class="links">
+        <a href="https://solscan.io/token/ByNePJZDNwnrDFbQSB1QDEtG7SwUd83CpakdZ3MUN2Fw" rel="noopener">Solscan</a>
+        <a href="https://explorer.solana.com/address/ByNePJZDNwnrDFbQSB1QDEtG7SwUd83CpakdZ3MUN2Fw" rel="noopener">Solana Explorer</a>
+        <a href="/sekai.json">Token metadata</a>
+        <a href="https://github.com/adamma1024/sekai-coin-assets" rel="noopener">GitHub</a>
+      </nav>
+    </section>
+
+    <footer>
+      <p>SEKAI is a personal project. It is not affiliated with any company or app.</p>
+      <p>Nothing on this page is financial advice. Crypto tokens can lose all of their value.</p>
+    </footer>
+  </main>
+  <script>
+    const copy = document.getElementById("copy");
+    copy.addEventListener("click", async () => {
+      const mint = document.getElementById("mint");
+      try {
+        await navigator.clipboard.writeText(mint.textContent);
+        copy.textContent = "Copied";
+      } catch (error) {
+        // Some embedded browsers block clipboard writes; select the address so it can be copied by hand.
+        console.error("Copy failed", error);
+        const range = document.createRange();
+        range.selectNodeContents(mint);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copy.textContent = "Selected, press Ctrl/Cmd+C";
+      }
+      setTimeout(() => { copy.textContent = "Copy"; }, 2000);
+    });
+  </script>
+</body>
+</html>
